@@ -10,27 +10,24 @@
  Email: toolbox@scilab.in
 */
  
+/*Function returns cumulative sum of members of array/matrix*/
 
-#ifndef __MATRIX_H__
-#define __MATRIX_H__
-
+#include "nnz.h"
 #include "types.h"
-#include "doubleComplex.h"
 #include "uint16.h"
+#include "doubleComplex.h"
+uint16 znnza(doubleComplex* in, int irow, int icolumn)
+{
+	int i; 
+	uint16 final=0;
+		for(i=0; i< irow*icolumn ; i++)
+			{
+				if(( zreals(in[i]) !=0 )||( zimags(in[i])!=0))
+					{
+						final++;
+						
+					}
 
-
-#ifdef  __cplusplus
-extern "C" {
-#endif
-
-void dmatrixa(double* , int , int , int , int , double*);
-void smatrixa( float* , int , int , int , int , float*);
-void u16matrixa(uint16 *, int , int , int , int ,uint16 *out);
-void zmatrixa(doubleComplex *, int , int , int , int  ,doubleComplex *);
-
-
-#ifdef  __cplusplus
-} /* extern "C" */
-#endif
-
-#endif /*__MATRIX_H__*/
+			}
+return final;
+}

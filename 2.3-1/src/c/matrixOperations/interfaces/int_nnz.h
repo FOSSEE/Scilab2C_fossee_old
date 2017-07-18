@@ -9,28 +9,27 @@
  Organization: FOSSEE, IIT Bombay
  Email: toolbox@scilab.in
 */
- 
 
-#ifndef __MATRIX_H__
-#define __MATRIX_H__
-
-#include "types.h"
-#include "doubleComplex.h"
-#include "uint16.h"
+#ifndef __INT_NNZ_H__
+#define __INT_NNZ_H__
 
 
 #ifdef  __cplusplus
 extern "C" {
 #endif
 
-void dmatrixa(double* , int , int , int , int , double*);
-void smatrixa( float* , int , int , int , int , float*);
-void u16matrixa(uint16 *, int , int , int , int ,uint16 *out);
-void zmatrixa(doubleComplex *, int , int , int , int  ,doubleComplex *);
+#define d2nnzu160(in1, size)     dnnza(in1, size[0], size[1])
+#define d0nnzu160(in)            dnnzs(in)
+
+#define s2nnzu160(in1, size)     snnza(in1, size[0], size[1])
+#define s0nnzu160(in)            snnzs(in)
+
+#define z2nnzu160(in1, size)     znnza(in1, size[0], size[1])
+#define z0nnzu160(in)            znnzs(in)
 
 
 #ifdef  __cplusplus
 } /* extern "C" */
 #endif
 
-#endif /*__MATRIX_H__*/
+#endif /*__INT_NNZ_H__*/

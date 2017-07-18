@@ -11,26 +11,27 @@
 */
  
 
-#ifndef __MATRIX_H__
-#define __MATRIX_H__
+#ifndef __NNZ_H__
+#define __NNZ_H__
 
 #include "types.h"
 #include "doubleComplex.h"
 #include "uint16.h"
 
-
 #ifdef  __cplusplus
 extern "C" {
 #endif
 
-void dmatrixa(double* , int , int , int , int , double*);
-void smatrixa( float* , int , int , int , int , float*);
-void u16matrixa(uint16 *, int , int , int , int ,uint16 *out);
-void zmatrixa(doubleComplex *, int , int , int , int  ,doubleComplex *);
+uint16 dnnza(double* , int , int);
+uint16 dnnzs(double);
+uint16 snnza( float* , int , int);
+uint16 snnzs( float);
+uint16 znnza(doubleComplex *, int , int);
+uint16 znnzs(doubleComplex);
 
 
 #ifdef  __cplusplus
 } /* extern "C" */
 #endif
 
-#endif /*__MATRIX_H__*/
+#endif /*__NNZ_H__*/

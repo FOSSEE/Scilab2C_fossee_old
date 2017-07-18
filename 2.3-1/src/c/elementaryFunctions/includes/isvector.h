@@ -9,28 +9,30 @@
  Organization: FOSSEE, IIT Bombay
  Email: toolbox@scilab.in
 */
- 
 
-#ifndef __MATRIX_H__
-#define __MATRIX_H__
+#ifndef __ISVECTOR_H__
+#define __ISVECTOR_H__
+
 
 #include "types.h"
 #include "doubleComplex.h"
-#include "uint16.h"
-
+#include "floatComplex.h"
 
 #ifdef  __cplusplus
 extern "C" {
 #endif
 
-void dmatrixa(double* , int , int , int , int , double*);
-void smatrixa( float* , int , int , int , int , float*);
-void u16matrixa(uint16 *, int , int , int , int ,uint16 *out);
-void zmatrixa(doubleComplex *, int , int , int , int  ,doubleComplex *);
-
+char disvectora(double* , int);
+char disvectors(double);
+char sisvectora( float* , int);
+char sisvectors( float);
+char gisvectora(char* , int);
+char gisvectors(char);
+char zisvectora(doubleComplex*, int);
+char zisvectors(doubleComplex);
 
 #ifdef  __cplusplus
 } /* extern "C" */
 #endif
 
-#endif /*__MATRIX_H__*/
+#endif
